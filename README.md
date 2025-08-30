@@ -1,6 +1,3 @@
- day3
-📂 Day 3 – Model Development
-
 Work Completed:
 
 Developed the classification model to categorize device-related risks into:
