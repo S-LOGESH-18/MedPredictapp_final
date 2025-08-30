@@ -1,5 +1,7 @@
-Folder Content:
+PROJECT ARCHITECTURE:
 Trained classification model code.<img width="1742" height="669" alt="Screenshot 2025-08-31 002607" src="https://github.com/user-attachments/assets/4361e5a5-552a-490a-8ba1-b6d159d8c21e" />
+
+Folder Content:
 Work Completed:
 
 Developed the classification model to categorize device-related risks into:
@@ -16,13 +18,13 @@ Added functionality for:
 Outputs of risk prediction.
 Documentation of Day 3 progress.
 =======
-# 🏥 Predicting Medical Equipment Failure – Hackathon Project
+# Predicting Medical Equipment Failure – Hackathon Project
 
 This repository contains our project developed during the 10-day Cognizant NPN AI Hackathon 2025, focused on predicting medical equipment failures using ML models for proactive interventions.
 
 ---
 
-## 📌 Repository Structure
+## Repository Structure
 - Day 1/ – Data collection, initial preprocessing, documentation, and UI glimpse.  
 - Day 2/ – Full preprocessing of datasets and Medical Risk Dashboard planning.  
 - Day 3/ – Model development, risk classification, and alert handling.  
@@ -30,7 +32,7 @@ This repository contains our project developed during the 10-day Cognizant NPN A
 
 ---
 
-## 📅 Daily Progress
+## Daily Progress
 
 ### 📂 Day 1 – Data Collection & Preprocessing
 - Uploaded 3 CSV datasets: `Devices.csv`, `Events.csv`, `Manufacture.csv`.  
@@ -59,7 +61,7 @@ This repository contains our project developed during the 10-day Cognizant NPN A
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 - Integrate model with the Medical Risk Dashboard UI.  
 - Deploy model on cloud for real-time prediction.  
 - Extend dataset coverage and improve accuracy.  
