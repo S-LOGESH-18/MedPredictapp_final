@@ -1,0 +1,61 @@
+{
+  "receivers": [
+    {
+      "id": "admin1",
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "phone": "+1234567890",
+      "role": "system_admin",
+      "notificationPreferences": {
+        "email": true,
+        "sms": true,
+        "inApp": true,
+        "push": true
+      },
+      "workingHours": {
+        "start": "09:00",
+        "end": "17:00",
+        "timezone": "UTC+5:30"
+      },
+      "severityLevels": ["low", "medium", "high"]
+    },
+    {
+      "id": "doctor1",
+      "name": "Dr. Smith",
+      "email": "doctor@example.com",
+      "phone": "+1987654321",
+      "role": "doctor",
+      "notificationPreferences": {
+        "email": true,
+        "sms": true,
+        "inApp": false,
+        "push": true
+      },
+      "workingHours": {
+        "start": "08:00",
+        "end": "20:00",
+        "timezone": "UTC+5:30"
+      },
+      "severityLevels": ["medium", "high"]
+    },
+    {
+      "id": "nurse1",
+      "name": "Nurse Johnson",
+      "email": "nurse@example.com",
+      "phone": "+1122334455",
+      "role": "nurse",
+      "notificationPreferences": {
+        "email": false,
+        "sms": true,
+        "inApp": true,
+        "push": true
+      },
+      "workingHours": {
+        "start": "07:00",
+        "end": "19:00",
+        "timezone": "UTC+5:30"
+      },
+      "severityLevels": ["high"]
+    }
+  ]
+}
