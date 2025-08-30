@@ -1,7 +1,9 @@
 PROJECT ARCHITECTURE:
-Trained classification model code.<img width="1742" height="669" alt="Screenshot 2025-08-31 002607" src="https://github.com/user-attachments/assets/4361e5a5-552a-490a-8ba1-b6d159d8c21e" />
+<img width="1742" height="669" alt="Screenshot 2025-08-31 002607" src="https://github.com/user-attachments/assets/4361e5a5-552a-490a-8ba1-b6d159d8c21e" />
 
 Folder Content:
+Trained classification model code.
+
 Work Completed:
 
 Developed the classification model to categorize device-related risks into:
