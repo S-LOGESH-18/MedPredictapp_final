@@ -1,3 +1,5 @@
+Folder Content:
+Trained classification model code.<img width="1742" height="669" alt="Screenshot 2025-08-31 002607" src="https://github.com/user-attachments/assets/4361e5a5-552a-490a-8ba1-b6d159d8c21e" />
 Work Completed:
 
 Developed the classification model to categorize device-related risks into:
@@ -10,8 +12,7 @@ Added functionality for:
 -Alerts generation
 -Timeline for alert retention (days to be kept in the system)
 
-Folder Content:
-Trained classification model code.
+
 Outputs of risk prediction.
 Documentation of Day 3 progress.
 =======
