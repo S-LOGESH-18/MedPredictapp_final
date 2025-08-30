@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "id": "med001",
+      "name": "Paracetamol 500mg",
+      "category": "Analgesic",
+      "description": "For relief of mild to moderate pain and fever",
+      "stockLevel": 150,
+      "minimumStockLevel": 50,
+      "unit": "Tablets",
+      "supplier": "ABC Pharmaceuticals",
+      "lastRestocked": "2025-08-20",
+      "expiryDate": "2026-12-31",
+      "barcode": "8901234567890",
+      "location": "Shelf A1",
+      "requiresPrescription": false,
+      "pricePerUnit": 0.25,
+      "currency": "USD"
+    },
+    {
+      "id": "med002",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "description": "For bacterial infections",
+      "stockLevel": 75,
+      "minimumStockLevel": 30,
+      "unit": "Capsules",
+      "supplier": "XYZ Pharma",
+      "lastRestocked": "2025-08-15",
+      "expiryDate": "2025-11-30",
+      "barcode": "8901234567891",
+      "location": "Refrigerator 1",
+      "requiresPrescription": true,
+      "pricePerUnit": 1.50,
+      "currency": "USD"
+    },
+    {
+      "id": "eqp001",
+      "name": "Blood Pressure Monitor",
+      "category": "Medical Equipment",
+      "description": "Digital blood pressure monitor with large display",
+      "stockLevel": 5,
+      "minimumStockLevel": 2,
+      "unit": "Pieces",
+      "supplier": "MediTech Solutions",
+      "lastCalibration": "2025-07-01",
+      "nextCalibration": "2026-01-01",
+      "serialNumber": "BP202508001",
+      "location": "Storage Room 2",
+      "requiresMaintenance": false,
+      "pricePerUnit": 89.99,
+      "currency": "USD"
+    },
+    {
+      "id": "sup001",
+      "name": "Disposable Gloves (Large)",
+      "category": "Medical Supplies",
+      "description": "Latex-free nitrile gloves, box of 100",
+      "stockLevel": 12,
+      "minimumStockLevel": 10,
+      "unit": "Boxes",
+      "supplier": "SafeGlove Inc.",
+      "lastRestocked": "2025-08-18",
+      "expiryDate": "2027-08-18",
+      "barcode": "8901234567892",
+      "location": "Supply Closet 1",
+      "requiresPrescription": false,
+      "pricePerUnit": 12.99,
+      "currency": "USD"
+    }
+  ]
+}
