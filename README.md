@@ -108,4 +108,24 @@ Additional functionalities implemented:
 
 ### 📂 Day 8 – Failure History & Dashboard  
 - Added **failure history & recall events timeline**.  
-- Developed **Manufacturer Dashb**
+- Developed **Manufacturer Dashboard (initial)**.  
+- Built **Login Page** with **Firebase Auth**.  
+- Integrated **alerts with UI + Flask**.  
+
+---
+
+### 📂 Day 9 – Testing & Refinements  
+- Added **timeline + placeholder widgets**.  
+- Updated **Manufacturer Dashboard** with next features.  
+- Integrated **Alerts system** with **Novu + backend**.  
+- Wrote **test case documents** for validation.  
+
+---
+
+### 📂 Day 10 – Final Integration & Evaluation  
+- Completed **Report Module**.  
+- Integrated **Manufacturer Dashboard + Testing Docs**.  
+- Finalized **Alert System**.  
+- Conducted **Model evaluation + documentation**.  
+
+---
