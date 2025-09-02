@@ -1,5 +1,5 @@
 PROJECT ARCHITECTURE:
-<img width="1742" height="669" alt="Screenshot 2025-08-31 002607" src="https://github.com/user-attachments/assets/4361e5a5-552a-490a-8ba1-b6d159d8c21e" />
+<img width="2213" height="969" alt="image" src="https://github.com/user-attachments/assets/2d646901-7a6c-4217-80dd-560f170ed2a3" />
 
 Folder Content:
 Trained classification model code.
