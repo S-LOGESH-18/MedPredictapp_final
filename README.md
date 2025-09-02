@@ -40,6 +40,8 @@ Additional functionalities implemented:
 - **Day 8/** – Failure history visualization, recall events timeline, Manufacturer Dashboard (initial), Login & Firebase Authentication.  
 - **Day 9/** – Alerts system integration, timeline placeholders, Manufacturer Dashboard refinements, and testing with case documentation.  
 - **Day 10/** – Final integration of all modules, Model evaluation, completed Alert System, Manufacturer Dashboard, and full documentation.  
+- **Day 11/** – AWS S3 report storage, mentor connect sessions, and minor updates.  
+- **Day 12/** – Applied mentor feedback, project refinements, and finalized submission.  
 
 ---
 
@@ -129,3 +131,19 @@ Additional functionalities implemented:
 - Conducted **Model evaluation + documentation**.  
 
 ---
+
+### 📂 Day 11 – AWS S3 Storage & Mentor Connect  
+- Integrated **AWS S3** for storing exported reports.  
+- Conducted **mentor connect sessions** for project feedback.  
+- Implemented **minor updates and fixes** based on testing.  
+
+---
+
+### 📂 Day 12 – Finalization & Submission  
+- Updated project with **mentor suggestions**.  
+- Finalized **codebase, documentation, and dashboards**.  
+- Prepared **final project submission**.  
+
+---
+
+⚡ **Built with**: Python, Scikit-Learn, Flask, React.js, Snowflake, AWS S3, Firebase, Novu  
