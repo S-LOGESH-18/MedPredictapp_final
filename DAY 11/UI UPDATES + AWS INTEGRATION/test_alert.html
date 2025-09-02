@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Alert Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .loading {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .quick-test {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        .quick-test h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        .quick-btn {
+            background: #28a745;
+            margin: 5px;
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        .quick-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Direct Alert Tester</h1>
+        <p>Send alerts directly with any device ID - No database required!</p>
+        
+        <form id="alertForm">
+            <div class="form-group">
+                <label for="deviceId">Device ID:</label>
+                <input type="text" id="deviceId" name="deviceId" placeholder="Enter any device ID (e.g., TEST001, 123, ABC)" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="severity">Severity:</label>
+                <select id="severity" name="severity">
+                    <option value="high">High Risk</option>
+                    <option value="medium">Medium Risk</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="sendBtn">📧 Send Alert</button>
+            <button type="button" id="clearBtn">🗑️ Clear</button>
+        </form>
+        
+        <div id="status" class="status"></div>
+        
+        <div class="quick-test">
+            <h3>🚀 Quick Test Buttons</h3>
+            <button class="quick-btn" onclick="quickTest('TEST001', 'high')">Test Device TEST001 (High)</button>
+            <button class="quick-btn" onclick="quickTest('123', 'high')">Test Device 123 (High)</button>
+            <button class="quick-btn" onclick="quickTest('ABC123', 'medium')">Test Device ABC123 (Medium)</button>
+            <button class="quick-btn" onclick="quickTest('DEVICE_001', 'high')">Test Device DEVICE_001 (High)</button>
+            <button class="quick-btn" onclick="quickTest('999', 'medium')">Test Device 999 (Medium)</button>
+        </div>
+        
+        <div class="log" id="log"></div>
+    </div>
+
+    <script>
+        const log = document.getElementById('log');
+        const status = document.getElementById('status');
+        const sendBtn = document.getElementById('sendBtn');
+        
+        function addLog(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            log.textContent += `[${timestamp}] ${message}\n`;
+            log.scrollTop = log.scrollHeight;
+        }
+        
+        function showStatus(message, type) {
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+        }
+        
+        function hideStatus() {
+            status.style.display = 'none';
+        }
+        
+        async function sendAlert(deviceId, severity) {
+            addLog(`📧 Sending alert for Device ${deviceId} with ${severity} severity...`);
+            
+            const payload = {
+                deviceId: deviceId,
+                severity: severity
+            };
+            
+            addLog(`📦 Payload: ${JSON.stringify(payload, null, 2)}`);
+            
+            try {
+                showStatus('📡 Sending alert...', 'loading');
+                sendBtn.disabled = true;
+                
+                const response = await fetch('/api/alert/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    showStatus(`✅ Alert sent successfully! Device: ${deviceId}`, 'success');
+                    addLog(`✅ SUCCESS: ${JSON.stringify(result, null, 2)}`);
+                } else {
+                    showStatus(`❌ Alert failed: ${result.error || 'Unknown error'}`, 'error');
+                    addLog(`❌ FAILED: ${JSON.stringify(result, null, 2)}`);
+                }
+                
+            } catch (error) {
+                showStatus(`❌ Network error: ${error.message}`, 'error');
+                addLog(`❌ NETWORK ERROR: ${error.message}`);
+            } finally {
+                sendBtn.disabled = false;
+                setTimeout(hideStatus, 5000);
+            }
+        }
+        
+        function quickTest(deviceId, severity) {
+            document.getElementById('deviceId').value = deviceId;
+            document.getElementById('severity').value = severity;
+            sendAlert(deviceId, severity);
+        }
+        
+        document.getElementById('alertForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const deviceId = document.getElementById('deviceId').value.trim();
+            const severity = document.getElementById('severity').value;
+            
+            if (!deviceId) {
+                showStatus('❌ Please enter a device ID', 'error');
+                return;
+            }
+            
+            sendAlert(deviceId, severity);
+        });
+        
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('deviceId').value = '';
+            document.getElementById('severity').value = 'high';
+            log.textContent = '';
+            hideStatus();
+        });
+        
+        // Initialize
+        addLog('🚀 Direct Alert Tester initialized');
+        addLog('📧 Ready to send alerts with any device ID');
+        addLog('🔧 No database validation required');
+    </script>
+</body>
+</html>

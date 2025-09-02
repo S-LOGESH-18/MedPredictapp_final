@@ -1,0 +1,119 @@
+.alert-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* File upload styles */
+.file-upload-label {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  border: 2px dashed #90caf9;
+  border-radius: 8px;
+  background-color: #f8fbff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #555;
+}
+
+.file-upload-label:hover {
+  border-color: #42a5f5;
+  background-color: #f1f9ff;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Severity buttons */
+.severity-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.severity-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.severity-btn:hover {
+  border-color: #90caf9;
+  background-color: #f5fbff;
+}
+
+.severity-btn.active {
+  color: white;
+  border-color: transparent;
+}
+
+.severity-btn.low.active {
+  background-color: #4caf50;
+}
+
+.severity-btn.medium.active {
+  background-color: #ff9800;
+}
+
+.severity-btn.high.active {
+  background-color: #f44336;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.submit-btn:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .severity-buttons {
+    flex-direction: column;
+  }
+  
+  .severity-btn {
+    padding: 0.6rem;
+  }
+}
